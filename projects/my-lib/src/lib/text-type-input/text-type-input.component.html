@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup" >
+    <mat-form-field  appearance="outline" fxFlex="100" style="width: 100%;">
+      <mat-label> {{lable}}</mat-label>
+      <input matInput placeholder="" [formControlName]="formNames" [required]="isrequired" [readonly]="readonly"
+             (change)="changeValue()" (keyup.enter)="onEnter($event)">
+      <mat-error *ngIf="formGroup.get(formNames).errors?.required">
+        {{lable}}  را وارد کنید
+      </mat-error>
+      <mat-error *ngIf="formGroup.get(formNames).errors?.maxlength">
+        حداکثر {{maxLenght}} کاراکتر وارد نمایید
+      </mat-error>
+    
+    </mat-form-field>
+  </form>
+  

@@ -1,0 +1,14 @@
+<form [formGroup]="formGroup" class="row">
+  <mat-form-field fxFlex="100" appearance="outline">
+    <mat-label> {{lable}}</mat-label>
+    <input matInput placeholder="" [formControlName]="formNames" [required]="isrequired">
+    <mat-error *ngIf="formGroup.get(formNames).errors?.required">
+      {{lable}}  را وارد کنید
+    </mat-error>
+ 
+    <mat-error *ngIf="formGroup.get(formNames).errors?.email">
+      ایمیل را صحیح وارد نمایید
+    </mat-error>
+
+  </mat-form-field>
+</form>

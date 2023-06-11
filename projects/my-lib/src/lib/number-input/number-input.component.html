@@ -1,0 +1,19 @@
+<form [formGroup]="formGroup" fxLayout="row">
+    <mat-form-field appearance="outline" class="class">
+        <mat-label> {{lable}}</mat-label>
+        <input matInput placeholder="" [formControlName]="formNames" [readonly]="readonly" [required]="isrequired" (change)="onchange()">
+        <mat-error *ngIf="formGroup.get(formNames).errors?.required">
+            {{lable}}  را وارد کنید
+        </mat-error>
+        <mat-error *ngIf="formGroup.get(formNames).errors?.maxlength">
+            حداکثر {{maxLenght}} کاراکتر وارد نمایید
+        </mat-error>
+        <mat-error *ngIf="formGroup.get(formNames).errors?.minlenght">
+            تعداد کاراکتر وارد شده بیشتر از حد مجاز است.
+        </mat-error>
+        <mat-error *ngIf="formGroup.get(formNames).errors?.pattern">
+            فقط از کاراکترهای عددی استفاده نمایید.
+        </mat-error>
+
+    </mat-form-field>
+</form>

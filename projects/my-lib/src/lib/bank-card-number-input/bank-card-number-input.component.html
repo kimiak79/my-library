@@ -1,0 +1,11 @@
+<form [formGroup]="formGroup" fxLayout="row">
+    <mat-form-field appearance="outline" class="class">
+        <mat-label> {{lable}}</mat-label>
+        <input matInput placeholder="" [formControlName]="formNames" [readonly]="readonly" [required]="isrequired" (change)="onchange()">
+   
+        <mat-error *ngIf="formGroup.get(formNames).errors?.invalid">
+            شماره کارت بانکی را صحیح وارد کنید.
+        </mat-error>
+
+    </mat-form-field>
+</form>

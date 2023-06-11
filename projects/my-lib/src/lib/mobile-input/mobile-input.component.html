@@ -1,0 +1,13 @@
+<form [formGroup]="formGroup" >
+  <mat-form-field  appearance="outline">
+    <mat-label> {{lable}}</mat-label>
+    <input matInput placeholder="" [formControlName]="formNames" [required]="isrequired">
+    <mat-error *ngIf="formGroup.get(formNames).errors?.required">
+      {{lable}}  را وارد کنید
+    </mat-error>
+    <mat-error *ngIf="formGroup.get(formNames).errors?.invalid">
+    شماره موبایل را صحیح وارد کنید.
+    </mat-error>
+
+  </mat-form-field>
+</form>

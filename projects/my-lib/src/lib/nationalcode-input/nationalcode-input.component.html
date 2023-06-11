@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup"  fxFlex>
+    <mat-form-field  appearance="outline" fxFlex="100" style="width: 100%;">
+        <mat-label> {{lable}}</mat-label>
+        <!--<mat-icon matPrefix>person_outline</mat-icon>-->
+        <input matInput placeholder="" [formControlName]="formNames" [required]="isrequired" type="tel" [readonly]="readonly">
+        <mat-error *ngIf="formGroup.get(formNames).errors?.required">
+            {{lable}}  را وارد کنید
+        </mat-error>
+
+        <mat-error *ngIf="formGroup.get(formNames).errors?.invalid">
+             {{lable}} را صحیح وارد نمایید
+        </mat-error>
+
+    </mat-form-field>
+</form>
